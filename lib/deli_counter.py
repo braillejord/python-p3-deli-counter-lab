@@ -11,9 +11,16 @@ def line(katz_deli):
         print(message)
 
 
-def take_a_number():
-    pass
+def take_a_number(katz_deli, customer):
+    # add new customer to line before creating/printing message
+    katz_deli.append(customer)
+
+    print(f"Welcome, {customer}. You are number {len(katz_deli)} in line.")
 
 
-def now_serving():
-    pass
+def now_serving(katz_deli):
+    if katz_deli == []:
+        print("There is nobody waiting to be served!")
+    else:
+        customer = katz_deli.pop(0)
+        print(f"Currently serving {customer}.")
